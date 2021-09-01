@@ -6,4 +6,4 @@ spec:
   forProvider:
     name: sn-app2
     teamowner: shipa-team
-    framework: dev-ec2a
+    framework: dev-ec2
