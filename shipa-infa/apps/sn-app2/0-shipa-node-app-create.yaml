@@ -5,5 +5,5 @@ metadata:
 spec:
   forProvider:
     name: sn-app2
-    teamowner: shipa-admin-team
-    framework: aws-dev
+    teamowner: shipa-team
+    framework: dev-ec2a
