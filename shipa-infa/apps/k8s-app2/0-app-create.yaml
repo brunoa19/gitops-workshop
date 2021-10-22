@@ -6,4 +6,4 @@ spec:
   forProvider:
     name: k8-app2
     teamowner: shipa-team
-    framework: aks-prod-cl
+    framework: aks-prod

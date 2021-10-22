@@ -6,7 +6,7 @@ spec:
   forProvider:
     name: gitops-app1
     teamowner: shipa-team
-    framework: qa
+    framework: aks-prod
 
 ---
 
