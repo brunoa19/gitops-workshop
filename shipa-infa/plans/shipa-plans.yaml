@@ -4,7 +4,7 @@ metadata:
   name: plan-create
 spec:
   forProvider:
-    name: project-plan
+    name: argo-plan
     teams: ["shipa-team"]
     cpushare: 100
     memory: 128M
