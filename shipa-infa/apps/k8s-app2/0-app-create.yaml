@@ -7,3 +7,14 @@ spec:
     name: gitops-app2
     teamowner: shipa-team
     framework: aks-prod
+
+---
+
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: AppDeploy
+metadata:
+  name: gitops-app2-deploy
+spec:
+  forProvider:
+    app: gitops-app2
+    image: "docker.io/shipasoftware/bulletinboard:1.0"
