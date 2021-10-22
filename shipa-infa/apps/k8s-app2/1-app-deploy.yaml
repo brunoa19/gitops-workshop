@@ -1,8 +1,8 @@
 apiVersion: shipa.crossplane.io/v1alpha1
 kind: AppDeploy
 metadata:
-  name: k8-app2-deploy
+  name: gitops-app2-deploy
 spec:
   forProvider:
-    app: k8-app2
-    image: "ghcr.io/podtato-head/podtatoserver:v0.1.1"
+    app: gitops2-app2
+    image: "docker.io/shipasoftware/bulletinboard:1.0"

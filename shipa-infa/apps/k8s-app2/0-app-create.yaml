@@ -1,9 +1,9 @@
 apiVersion: shipa.crossplane.io/v1alpha1
 kind: App
 metadata:
-  name: k8-app2-create
+  name: gitops-app2-create
 spec:
   forProvider:
-    name: k8-app2
+    name: gitops-app2
     teamowner: shipa-team
     framework: aks-prod
