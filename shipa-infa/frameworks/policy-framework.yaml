@@ -1,10 +1,10 @@
 apiVersion: shipa.crossplane.io/v1alpha1
 kind: Framework
 metadata:
-  name: dev
+  name: project1
 spec:
   forProvider:
-    shipaFramework: dev
+    shipaFramework: project1
     resources:
       general:
         setup:
@@ -27,10 +27,10 @@ spec:
 apiVersion: shipa.crossplane.io/v1alpha1
 kind: Framework
 metadata:
-  name: qa
+  name: project2
 spec:
   forProvider:
-    shipaFramework: qa
+    shipaFramework: project2
     resources:
       general:
         setup:
@@ -53,10 +53,10 @@ spec:
 apiVersion: shipa.crossplane.io/v1alpha1
 kind: Framework
 metadata:
-  name: prod
+  name: project3
 spec:
   forProvider:
-    shipaFramework: prod
+    shipaFramework: project3
     resources:
       general:
         setup:
