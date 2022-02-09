@@ -17,4 +17,4 @@ metadata:
 spec:
   forProvider:
     app: gitops-app1
-    image: "docker.io/shipasoftware/bulletinboard:1.0"
+    image: "ghcr.io/podtato-head/podtatoserver:v0.1.1"
