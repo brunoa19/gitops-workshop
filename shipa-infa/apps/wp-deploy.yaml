@@ -1,0 +1,87 @@
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: App
+metadata:
+  name: mysql-db-create
+spec:
+  forProvider:
+    name: mysql-db
+    teamowner: shipa-team
+    framework: gitops-app-fw
+
+---
+
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: AppEnv
+metadata:
+  name: mysql-db-env
+spec:
+  forProvider:
+    app: mysql-db
+    app_env:
+      envs:
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_USER
+          value: shipa
+        - name: MYSQL_PASSWORD
+          value: shipa
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          value: 1
+      norestart: true
+      private: false
+
+---
+
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: AppDeploy
+metadata:
+  name: mysql-db-deploy
+spec:
+  forProvider:
+    app: mysql-db
+    image: "mysql:5.7"
+
+---
+
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: App
+metadata:
+  name: wp-create-create
+spec:
+  forProvider:
+    name: wordpress
+    teamowner: shipa-team
+    framework: gitops-app-fw
+
+---
+
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: AppEnv
+metadata:
+  name: wp-env
+spec:
+  forProvider:
+    app: wordpress
+    app_env:
+      envs:
+        - name: WORDPRESS_DB_HOST
+          value: app-mysql-db.shipa-gitops-app-fw.svc
+        - name: WORDPRESS_DB_USER
+          value: shipa
+        - name: WORDPRESS_DB_PASSWORD
+          value: shipa
+        - name: WORDPRESS_DB_NAME
+          value: wordpress
+      norestart: true
+      private: false
+
+---
+
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: AppDeploy
+metadata:
+  name: wp-image-deploy
+spec:
+  forProvider:
+    app: wordpress
+    image: "wordpress:5.7-php7.4"
