@@ -1,0 +1,20 @@
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: App
+metadata:
+  name: ravi-create
+spec:
+  forProvider:
+    name: ravi
+    teamowner: shipa-team
+    framework: not-exist
+
+---
+
+apiVersion: shipa.crossplane.io/v1alpha1
+kind: AppDeploy
+metadata:
+  name: ravi-deploy
+spec:
+  forProvider:
+    app: ravi
+    image: "nginxdemos/hello"
